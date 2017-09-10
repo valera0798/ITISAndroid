@@ -9,8 +9,9 @@
     <string name="question2">Where there is an exchange of gases between blood and tissues?</string>
     <string name="question2_answers">Capillaries/Arteries/Veins</string>
     <string name="question3">Flowing through the capillaries the systemic circulation, blood...</string>
-    <string name="question3_answers">Gives oxygen/Doesn\'t change/Is enriched with oxygen</string>
+    <string name="question3_answers">Gives oxygen/Does not change/Is enriched with oxygen</string>
     <string name="tv_result">Result:</string>
     <string name="tv_result_text">Congratulations!</string>
     <string name="tv_welcome">Welcome!</string>
+    <string name="error_not_checked">Chose answer!</string>
 </resources>

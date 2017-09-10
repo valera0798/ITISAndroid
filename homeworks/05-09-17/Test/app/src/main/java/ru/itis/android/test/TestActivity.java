@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -112,9 +113,12 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         RadioButton rbChecked = (RadioButton) findViewById(rgAnswers.getCheckedRadioButtonId());
-        Question currentQuestion = test.getCurrentQuestion();
-        currentQuestion.answer(rbChecked.getText().toString());
-        test.verifyCorrectness(currentQuestion);
-        updateQuestion();
+        if (rbChecked != null) {
+            Question currentQuestion = test.getCurrentQuestion();
+            currentQuestion.answer(rbChecked.getText().toString());
+            test.verifyCorrectness(currentQuestion);
+            updateQuestion();
+        } else
+            Toast.makeText(this, R.string.error_not_checked, Toast.LENGTH_SHORT).show();
     }
 }

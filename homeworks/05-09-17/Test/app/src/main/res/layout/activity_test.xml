@@ -7,36 +7,53 @@
     android:padding="16dp"
     tools:context="ru.itis.android.test.TestActivity">
 
-    <TextView
-        android:id="@+id/tv_question_text"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
-
-    <RadioGroup
-        android:id="@+id/rg_answers"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_weight="1">
 
-        <RadioButton
-            android:id="@+id/rb_answer1"
+        <TextView
+            android:id="@+id/tv_question_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:textSize="28sp"
+            android:textStyle="italic" />
 
-        <RadioButton
-            android:id="@+id/rb_answer2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp" />
+    </ScrollView>
 
-        <RadioButton
-            android:id="@+id/rb_answer3"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <RadioGroup
+            android:id="@+id/rg_answers"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp" />
-    </RadioGroup>
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp">
+
+            <RadioButton
+                android:id="@+id/rb_answer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp" />
+
+            <RadioButton
+                android:id="@+id/rb_answer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="22sp" />
+
+            <RadioButton
+                android:id="@+id/rb_answer3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="22sp" />
+        </RadioGroup>
+
+    </ScrollView>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -49,14 +66,16 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:text="№ 1 / 3"/>
+            android:textSize="26sp"
+            android:textStyle="italic" />
 
         <Button
             android:id="@+id/btn_answer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="@string/btn_answer" />
+            android:text="@string/btn_answer"
+            android:textSize="20sp" />
     </RelativeLayout>
 
 

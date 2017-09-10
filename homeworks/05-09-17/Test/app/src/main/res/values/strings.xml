@@ -3,6 +3,7 @@
     <string name="tv_welcome">Добро пожаловать!</string>
     <string name="btn_start">Начать</string>
     <string name="btn_answer">Ответить</string>
+    <string name="error_not_checked">Выберите ответ!</string>
 
     <!--Вопросы-->
     <string-array name="array_questions">

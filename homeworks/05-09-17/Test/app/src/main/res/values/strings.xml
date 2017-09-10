@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Тест</string>
+    <string name="tv_welcome">Добро пожаловать!</string>
+    <string name="btn_start">Начать</string>
+    <string name="btn_answer">Ответить</string>
+
+    <!--Вопросы-->
+    <string-array name="array_questions">
+        <item>@string/question1</item>
+        <item>@string/question2</item>
+        <item>@string/question3</item>
+    </string-array>
+    <string name="question1">Сосуды, по которым кровь течёт от сердца к органам?</string>
+    <string name="question2">Где происходит обмен газами между кровью и тканями?</string>
+    <string name="question3">Протекая через капилляры большого круга кровообращения, кровь...</string>
+
+    <!--Ответы на вопросы, верный ответ в начале списке-->
+    <string-array name="array_answers">
+        <item>@string/question1_answers</item>
+        <item>@string/question2_answers</item>
+        <item>@string/question3_answers</item>
+    </string-array>
+    <string name="question1_answers">Артерии/Капилляры/Вены</string>
+    <string name="question3_answers">Отдаёт кислород/Не изменяется/Обогащается кислородом</string>
+    <string name="btn_restart">Начать сначала</string>
+    <string name="tv_result">Результат:</string>
+    <string name="tv_result_text">Поздравляю!</string>
+    <string name="question2_answers">Капилляры/Артерии/Вены</string>
+
+</resources>

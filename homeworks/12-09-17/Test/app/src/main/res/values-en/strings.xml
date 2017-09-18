@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Test</string>
+    <string name="btn_answer">Answer</string>
+    <string name="btn_restart">Restart</string>
+    <string name="btn_start">Start</string>
+    <string name="question1">Vessels through which blood flows from heart to organs?</string>
+    <string name="question1_answers">Arteries/Capillaries/Veins</string>
+    <string name="question2">Where there is an exchange of gases between blood and tissues?</string>
+    <string name="question2_answers">Capillaries/Arteries/Veins</string>
+    <string name="question3">Flowing through the capillaries the systemic circulation, blood...</string>
+    <string name="question3_answers">Gives oxygen/Does not change/Is enriched with oxygen</string>
+    <string name="tv_result">Result:</string>
+    <string name="tv_result_text">Congratulations!</string>
+    <string name="tv_welcome">Welcome!</string>
+    <string name="error_not_checked">Chose answer!</string>
+    <string name="btn_exit">Exit</string>
+    <string name="btn_negative">No</string>
+    <string name="btn_positive">Yes</string>
+    <string name="share_message1">My result:</string>
+    <string name="share_message2">Can you do it better?</string>
+    <string name="share_confirmation">Do you want to share the result?</string>
+</resources>

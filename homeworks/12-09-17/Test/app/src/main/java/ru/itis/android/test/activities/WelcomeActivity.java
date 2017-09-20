@@ -15,11 +15,13 @@ public class WelcomeActivity extends FragmentHostActivity {
         return WelcomeFragment.newInstance();
     }
 
+    // TODO зачем было переопределять эти методы, когда все это уже есть в activity_fragment_host
     @Override
     public int getLayoutId() {
         return R.layout.activity_welcome;
     }
 
+    // TODO зачем было переопределять эти методы, когда все это уже есть в activity_fragment_host
     @Override
     public int getContainerId() {
         return R.id.fragment_welcome_container;

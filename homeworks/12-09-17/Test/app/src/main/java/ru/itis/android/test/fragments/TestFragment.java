@@ -23,6 +23,7 @@ import ru.itis.android.test.models.Question;
 import ru.itis.android.test.models.Test;
 
 public class TestFragment extends Fragment implements View.OnClickListener {
+
     public static final String RB_ANSWER_PATTERN = "rb_answer";
     public static final String RB_ID_RESOURCE_TYPE = "id";
 
@@ -33,6 +34,7 @@ public class TestFragment extends Fragment implements View.OnClickListener {
     private List<RadioButton> rbAnswers;
     private Button btnAnswer;
 
+    // TODO Статик переменные - зло, нужно избегать их (этот случай в числе тех, когда это надо делать)
     private static Test test;
 
     public static TestFragment newInstance(Test test) {
@@ -87,6 +89,7 @@ public class TestFragment extends Fragment implements View.OnClickListener {
     private void nextTestFragment() {
         getFragmentManager()
                 .beginTransaction()
+                // TODO Вот так приводить типы не советую - опасно
                 .replace(((FragmentHostActivity) getActivity()).getContainerId(),
                         ((FragmentHostActivity) getActivity()).getFragment())
                 .addToBackStack(null)
@@ -106,6 +109,7 @@ public class TestFragment extends Fragment implements View.OnClickListener {
     }
 
     private void startResultActivity() {
+        // TODO makeIntent
         Intent intent = new Intent(getActivity(), ResultActivity.class);
         intent.putExtra(ResultActivity.EXTRA_QUESTIONS_NUMBER, test.getQuestionsNumber());
         intent.putExtra(ResultActivity.EXTRA_RIGHT_ANSWERED_QUESTIONS_NUMBER,

@@ -19,11 +19,13 @@ public class ResultActivity extends FragmentHostActivity {
         return ResultFragment.newInstance(getData());
     }
 
+    // TODO зачем было переопределять эти методы, когда все это уже есть в activity_fragment_host
     @Override
     public int getLayoutId() {
         return R.layout.activity_result;
     }
 
+    // TODO зачем было переопределять эти методы, когда все это уже есть в activity_fragment_host
     @Override
     public int getContainerId() {
         return R.id.fragment_result_container;

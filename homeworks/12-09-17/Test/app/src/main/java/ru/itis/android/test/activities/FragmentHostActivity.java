@@ -34,6 +34,7 @@ public abstract class FragmentHostActivity extends AppCompatActivity {
 
     public abstract Fragment getFragment();
 
+    // TODO не совсем понятно, зачем это.
     @Override
     public void onBackPressed() {
         super.onBackPressed();

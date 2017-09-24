@@ -27,16 +27,20 @@ public class TestActivity extends FragmentHostActivity {
         return TestFragment.newInstance(test);
     }
 
+    // TODO зачем было переопределять эти методы, когда все это уже есть в activity_fragment_host
     @Override
     public int getLayoutId() {
         return R.layout.activity_test;
     }
 
+    // TODO зачем было переопределять эти методы, когда все это уже есть в activity_fragment_host
     @Override
     public int getContainerId() {
         return R.id.fragment_test_container;
     }
 
+
+    // TODO респект! Хотел снизить баллы, но из-за этого не буду :)
     @Override
     public void onBackPressed() {
         if (getFragmentManager().getBackStackEntryCount() > 1) {

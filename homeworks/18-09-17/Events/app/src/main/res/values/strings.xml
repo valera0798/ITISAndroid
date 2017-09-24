@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Events</string>
+    <string name="tv_event_list">Список событий</string>
+</resources>

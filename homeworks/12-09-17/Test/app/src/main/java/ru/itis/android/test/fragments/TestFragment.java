@@ -1,7 +1,5 @@
 package ru.itis.android.test.fragments;
 
-import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -27,6 +25,7 @@ public class TestFragment extends Fragment implements View.OnClickListener {
     public static final String RB_ANSWER_PATTERN = "rb_answer";
     public static final String RB_ID_RESOURCE_TYPE = "id";
 
+    private int containerId;
     private View layout;
     private TextView tvQuestionNumber;
     private TextView tvQuestionText;
@@ -34,17 +33,21 @@ public class TestFragment extends Fragment implements View.OnClickListener {
     private List<RadioButton> rbAnswers;
     private Button btnAnswer;
 
-    // TODO Статик переменные - зло, нужно избегать их (этот случай в числе тех, когда это надо делать)
-    private static Test test;
+    private Test test;
 
-    public static TestFragment newInstance(Test test) {
+    public static TestFragment newInstance(Test test, int containerId) {
         TestFragment testFragment = new TestFragment();
+        testFragment.setContainerId(containerId);
         testFragment.setTest(test);
         return testFragment;
     }
 
     public void setTest(Test test) {
         this.test = test;
+    }
+
+    public void setContainerId(int containerId) {
+        this.containerId = containerId;
     }
 
     @Override
@@ -89,9 +92,8 @@ public class TestFragment extends Fragment implements View.OnClickListener {
     private void nextTestFragment() {
         getFragmentManager()
                 .beginTransaction()
-                // TODO Вот так приводить типы не советую - опасно
-                .replace(((FragmentHostActivity) getActivity()).getContainerId(),
-                        ((FragmentHostActivity) getActivity()).getFragment())
+                .replace(containerId,
+                        TestFragment.newInstance(test, containerId))
                 .addToBackStack(null)
                 .commit();
     }
@@ -109,14 +111,12 @@ public class TestFragment extends Fragment implements View.OnClickListener {
     }
 
     private void startResultActivity() {
-        // TODO makeIntent
-        Intent intent = new Intent(getActivity(), ResultActivity.class);
-        intent.putExtra(ResultActivity.EXTRA_QUESTIONS_NUMBER, test.getQuestionsNumber());
-        intent.putExtra(ResultActivity.EXTRA_RIGHT_ANSWERED_QUESTIONS_NUMBER,
+        Bundle testData = new Bundle();
+        testData.putInt(ResultActivity.EXTRA_QUESTIONS_NUMBER, test.getQuestionsNumber());
+        testData.putInt(ResultActivity.EXTRA_RIGHT_ANSWERED_QUESTIONS_NUMBER,
                 test.getRightAnsweredQuestionsNumber());
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
+
+        startActivity(ResultActivity.makeIntent(getActivity(), testData));
     }
 
     private void shuffleQuestions(String[] answers) {

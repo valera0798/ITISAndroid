@@ -1,6 +1,7 @@
 package ru.itis.android.test.activities;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import ru.itis.android.test.R;
 import ru.itis.android.test.fragments.ResultFragment;
+import ru.itis.android.test.fragments.TestFragment;
 
 public class ResultActivity extends FragmentHostActivity {
     public static final String EXTRA_QUESTIONS_NUMBER = "extraQuestionNumber";
@@ -19,13 +21,11 @@ public class ResultActivity extends FragmentHostActivity {
         return ResultFragment.newInstance(getData());
     }
 
-    // TODO зачем было переопределять эти методы, когда все это уже есть в activity_fragment_host
     @Override
     public int getLayoutId() {
         return R.layout.activity_result;
     }
 
-    // TODO зачем было переопределять эти методы, когда все это уже есть в activity_fragment_host
     @Override
     public int getContainerId() {
         return R.id.fragment_result_container;
@@ -45,4 +45,12 @@ public class ResultActivity extends FragmentHostActivity {
 
     @Override
     public void onBackPressed() {}
+
+    public static Intent makeIntent(Context from, Bundle testData) {
+        Intent intent = new Intent(from, ResultActivity.class);
+        intent.putExtras(testData);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        return intent;
+    }
 }

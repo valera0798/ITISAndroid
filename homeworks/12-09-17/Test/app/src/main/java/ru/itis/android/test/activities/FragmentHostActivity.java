@@ -24,6 +24,9 @@ public abstract class FragmentHostActivity extends AppCompatActivity {
 
     protected void preInitialization() {}
 
+    // Каждая активность имеет свой специфический макет.
+    // В данном случае его стрктура совпадает с activity_fragment_host,
+    // Но при последующем развитии, ситуация может измениться.
     public int getLayoutId() {
         return R.layout.activity_fragment_host;
     }
@@ -34,7 +37,8 @@ public abstract class FragmentHostActivity extends AppCompatActivity {
 
     public abstract Fragment getFragment();
 
-    // TODO не совсем понятно, зачем это.
+    // Для игнорирования сброса фрагмента из активности.
+    // finish() закрывает активность без учёта backstacka.
     @Override
     public void onBackPressed() {
         super.onBackPressed();

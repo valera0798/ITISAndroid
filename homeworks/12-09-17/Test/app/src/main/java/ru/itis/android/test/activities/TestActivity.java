@@ -1,7 +1,8 @@
 package ru.itis.android.test.activities;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
+import android.content.Context;
+import android.content.Intent;
 
 import ru.itis.android.test.R;
 import ru.itis.android.test.fragments.TestFragment;
@@ -24,23 +25,19 @@ public class TestActivity extends FragmentHostActivity {
 
     @Override
     public Fragment getFragment() {
-        return TestFragment.newInstance(test);
+        return TestFragment.newInstance(test, R.id.fragment_test_container);
     }
 
-    // TODO зачем было переопределять эти методы, когда все это уже есть в activity_fragment_host
     @Override
     public int getLayoutId() {
         return R.layout.activity_test;
     }
 
-    // TODO зачем было переопределять эти методы, когда все это уже есть в activity_fragment_host
     @Override
     public int getContainerId() {
         return R.id.fragment_test_container;
     }
 
-
-    // TODO респект! Хотел снизить баллы, но из-за этого не буду :)
     @Override
     public void onBackPressed() {
         if (getFragmentManager().getBackStackEntryCount() > 1) {
@@ -49,5 +46,14 @@ public class TestActivity extends FragmentHostActivity {
         } else if (getFragmentManager().getBackStackEntryCount() == 1) {
             finish();
         }
+    }
+
+
+    public static Intent makeIntent(Context from) {
+        Intent intent = new Intent(from, TestActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+        return intent;
     }
 }

@@ -33,12 +33,6 @@ public class WelcomeFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-        // TODO makeIntent
-        Intent intent = new Intent(view.getContext(), TestActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
+        startActivity(TestActivity.makeIntent(view.getContext()));
     }
-
-    // TODO хотел снизить баллы сначала, но во многих местах код написан очень даже грамотно - это компенсирует недостатки
 }

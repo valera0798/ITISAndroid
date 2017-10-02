@@ -3,16 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ru.itis.android.lesson_18_09_17.customview.pagerindicator.PagerIndicator
-        android:id="@+id/page_indicator"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="16dp" />
-
+    <!--<ru.itis.android.lesson_18_09_17.customview.pagerindicator.PagerIndicator-->
+    <!--android:id="@+id/page_indicator"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_margin="16dp" />-->
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_contacts"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <me.relex.circleindicator.CircleIndicator
+        android:id="@+id/ci_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"/>
 
 </RelativeLayout>

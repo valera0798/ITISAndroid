@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,12 +19,12 @@ import ru.itis.android.lesson_18_09_17.models.PhoneNumber;
 public class ContactsListActivity extends AppCompatActivity implements OnItemClickListener{
     public static final int TEST_DATA_NUMBER = 10;
 
-
     private List<Contact> contacts;
 
     private RecyclerView recyclerView;
     private LinearLayoutManager layoutManager;
     private RecyclerView.Adapter<ContactViewHolder> adapter;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,10 @@ public class ContactsListActivity extends AppCompatActivity implements OnItemCli
         setContentView(R.layout.activity_contacts_list);
 
         contacts = initTestData();
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         layoutManager = new LinearLayoutManager(this);
         adapter = new ContactListAdapter(contacts, this);
 

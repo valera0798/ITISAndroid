@@ -1,9 +1,7 @@
 package ru.itis.android.lesson_18_09_17.activities.contactpager;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -21,11 +19,10 @@ import java.util.List;
 
 import ru.itis.android.lesson_18_09_17.R;
 import ru.itis.android.lesson_18_09_17.activities.contactpager.dialog.DatePickerFragment;
-import ru.itis.android.lesson_18_09_17.controllers.OnPhoneNumberClickListener;
 import ru.itis.android.lesson_18_09_17.models.Contact;
 import ru.itis.android.lesson_18_09_17.models.PhoneNumber;
 
-public class ContactFragment extends Fragment implements View.OnClickListener {
+public class ContactFragment extends Fragment implements View.OnClickListener{
     public static final String KEY_CONTACT = "contacts";
     private static final String TAG_DATE_PICKER = "tagDatePicker";
     private static final int REQUEST_CODE_DATE = 0;
@@ -36,10 +33,6 @@ public class ContactFragment extends Fragment implements View.OnClickListener {
     private TextView tvContactName;
     private LinearLayout llPhoneNumbers;
     private Button btnSelectDate;
-
-    public void setContact(Contact contact) {
-        this.contact = contact;
-    }
 
     public static ContactFragment newInstance(Contact contact) {
         Bundle args = new Bundle();
@@ -53,10 +46,8 @@ public class ContactFragment extends Fragment implements View.OnClickListener {
         return fragment;
     }
 
-    public static Intent makeDialIntent(String phoneNumber) {
-        Intent dialIntent = new Intent(Intent.ACTION_DIAL);
-        dialIntent.setData(Uri.parse("tel:" + phoneNumber));
-        return dialIntent;
+    public void setContact(Contact contact) {
+        this.contact = contact;
     }
 
     @Override
@@ -80,8 +71,17 @@ public class ContactFragment extends Fragment implements View.OnClickListener {
         ivContactPhoto.setImageResource(contact.getDrawableId());
         tvContactName.setText(contact.getName());
         updateDate();
-        initPhoneNumberList(inflater);
+
+        List<PhoneNumber> phoneNumberList = contact.getPhoneNumbersList();
+        View layoutPhoneNumber;
+        for (PhoneNumber phoneNumber: phoneNumberList) {
+            layoutPhoneNumber = inflater.inflate(R.layout.item_phone_number, llPhoneNumbers, false);
+            initPhoneNumber(layoutPhoneNumber, phoneNumber);
+
+            llPhoneNumbers.addView(layoutPhoneNumber);
+        }
     }
+
     private void updateDate() {
         if (contact.getCallAtDate() != null) {
             btnSelectDate.setText(contact.getCallAtDate().toString());
@@ -89,29 +89,15 @@ public class ContactFragment extends Fragment implements View.OnClickListener {
             btnSelectDate.setText(R.string.btn_select_date);
         }
     }
-    private void initPhoneNumberList(LayoutInflater inflater) {
-        List<PhoneNumber> phoneNumberList = contact.getPhoneNumbersList();
-        View layoutPhoneNumber;
-        OnPhoneNumberClickListener phoneNumberClickListener =
-                new OnPhoneNumberClickListener(getActivity(), getString(R.string.dial_action_title));
-        for (final PhoneNumber phoneNumber : phoneNumberList) {
-            layoutPhoneNumber = inflater.inflate(R.layout.item_phone_number, llPhoneNumbers, false);
-            initPhoneNumberData(layoutPhoneNumber, phoneNumber);
 
-            phoneNumberClickListener.setPhoneNumber(phoneNumber.getNumber());
-            layoutPhoneNumber.setOnClickListener(phoneNumberClickListener);
-
-            llPhoneNumbers.addView(layoutPhoneNumber);
-        }
-    }
-    private void initPhoneNumberData(View layoutPhoneNumber, PhoneNumber phoneNumber) {
+    private void initPhoneNumber(View layoutPhoneNumber, PhoneNumber phoneNumber) {
         ((TextView) layoutPhoneNumber.findViewById(R.id.tv_info_phone_number))
                 .setText(phoneNumber.getNumber());
         ((TextView) layoutPhoneNumber.findViewById(R.id.tv_info_phone_number_description))
                 .setText(phoneNumber.getDescription());
     }
 
-    // метод, вызываемый целевым фрагментом для получения данных из дочернего
+    // метод, вызываемый целевым дял получения данных из дочернего фрагмента
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE_DATE) {

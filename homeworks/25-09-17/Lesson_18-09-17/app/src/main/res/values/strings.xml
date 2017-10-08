@@ -6,5 +6,4 @@
     <string name="date_picker_title">Need to call at</string>
     <string name="btn_select_date">Select date</string>
     <string name="tv_select_date">In what date do you want to call?</string>
-    <string name="dial_action_title">Dial number</string>
 </resources>

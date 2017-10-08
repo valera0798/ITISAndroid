@@ -1,5 +1,7 @@
 package ru.itis.android.lesson_18_09_17.activities.contactlist;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -25,6 +27,14 @@ public class ContactsListActivity extends AppCompatActivity implements OnItemCli
     private LinearLayoutManager layoutManager;
     private RecyclerView.Adapter<ContactViewHolder> adapter;
     private Toolbar toolbar;
+
+    public static Intent makeIntent(Context from) {
+        Intent intent = new Intent(from, ContactsListActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,4 +73,6 @@ public class ContactsListActivity extends AppCompatActivity implements OnItemCli
     public void onClick(int position) {
         startActivity(ContactPagerActivity.makeIntent(this, position, contacts));
     }
+
+
 }

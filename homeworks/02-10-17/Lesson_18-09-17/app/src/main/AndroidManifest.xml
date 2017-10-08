@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.contactlist.ContactsListActivity">
+        <activity android:name=".activities.contactlist.ContactsListActivity" />
+        <activity android:name=".activities.contactpager.ContactPagerActivity" />
+        <activity android:name=".activities.start.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.detail.EventDetailActivity" />
-        <activity android:name=".activities.contactpager.ContactPagerActivity"></activity>
     </application>
 
 </manifest>

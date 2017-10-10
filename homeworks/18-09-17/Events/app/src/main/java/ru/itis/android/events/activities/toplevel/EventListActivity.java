@@ -1,5 +1,6 @@
 package ru.itis.android.events.activities.toplevel;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -39,7 +40,8 @@ public class EventListActivity extends AppCompatActivity implements OnItemClickL
 
     @Override
     public void onClick(int position) {
-        startActivity(EventDetailActivity.makeIntent(this));
+        Intent intent = EventDetailActivity.makeIntent(this, position, (ArrayList<Event>) events);
+        startActivity(intent);
     }
 
     private List<Event> initTestData() {

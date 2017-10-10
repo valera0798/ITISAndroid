@@ -41,10 +41,8 @@ public class Contact implements Parcelable {
     public Date getCallAtDate() {
         return callAtDate;
     }
-
-    @Override
-    public int describeContents() {
-        return 0;
+    public void setCallAtDate(Date callAtDate) {
+        this.callAtDate = callAtDate;
     }
 
     protected Contact(Parcel in) {
@@ -76,7 +74,8 @@ public class Contact implements Parcelable {
         parcel.writeSerializable(callAtDate);
     }
 
-    public void setCallAtDate(Date callAtDate) {
-        this.callAtDate = callAtDate;
+    @Override
+    public int describeContents() {
+        return 0;
     }
 }

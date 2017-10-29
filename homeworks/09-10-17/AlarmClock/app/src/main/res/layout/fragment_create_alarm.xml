@@ -1,0 +1,20 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context="ru.itis.android.alarmclock.fragments.start.CreateAlarmFragment">
+
+    <TimePicker
+        android:id="@+id/tp_time_alarm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp" />
+
+    <include
+        android:id="@+id/ll_container_buttons"
+        layout="@layout/checkboxes_days"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

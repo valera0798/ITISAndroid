@@ -44,8 +44,6 @@ public class SplashFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-        //startLoading();
     }
 
     private void initViews(View layout) {
@@ -58,7 +56,7 @@ public class SplashFragment extends Fragment {
             @Override
             public void run() {
                 if (progress < MAX_VALUE) {
-                    changeState();
+                    changeProgressState();
                     progressHandler.postDelayed(this, DELAY);
                 } else {
                     Intent intent = ContactsListActivity.makeIntent(getActivity());
@@ -67,7 +65,7 @@ public class SplashFragment extends Fragment {
             }
         });
     }
-    private void changeState() {
+    private void changeProgressState() {
         pbLoading.setProgress(progress++);
         if (progress % 3 != 0)
             tvLoading.setText(tvLoading.getText() + ".");

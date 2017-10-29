@@ -26,7 +26,6 @@ public class ContactsListActivity extends AppCompatActivity implements OnItemCli
     private RecyclerView recyclerView;
     private LinearLayoutManager layoutManager;
     private RecyclerView.Adapter<ContactViewHolder> adapter;
-    private Toolbar toolbar;
 
     public static Intent makeIntent(Context from) {
         Intent intent = new Intent(from, ContactsListActivity.class);
@@ -42,9 +41,6 @@ public class ContactsListActivity extends AppCompatActivity implements OnItemCli
         setContentView(R.layout.activity_contacts_list);
 
         contacts = initTestData();
-
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         layoutManager = new LinearLayoutManager(this);
         adapter = new ContactListAdapter(contacts, this);

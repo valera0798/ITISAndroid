@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ru.itis.android.sqlitetest.MainActivity">
+    <item
+        android:id="@+id/action_delete_all_entries"
+        android:orderInCategory="100"
+        android:title="@string/action_delete_all_entries"
+        app:showAsAction="never" />
+</menu>

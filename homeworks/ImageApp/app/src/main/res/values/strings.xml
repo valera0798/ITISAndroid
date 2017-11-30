@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">ImageApp</string>
+    <string name="title">Подтверждение</string>
+    <string name="content">Загрузить изображения?</string>
+    <string name="agree">Да</string>
+    <string name="disagree">Нет</string>
+
+    <array name="url_images">
+        <item>https://pp.userapi.com/c840529/v840529709/22701/TCJrgyi7hM4.jpg</item>
+        <item>https://pp.userapi.com/c841138/v841138318/33b92/_a4GOOZUz4M.jpg</item>
+        <item>https://pp.userapi.com/c840325/v840325635/20f00/YVobHjpMEcY.jpg</item>
+        <item>https://pp.userapi.com/c840330/v840330337/1f402/zvx-EMAH5vk.jpg</item>
+        <item>https://pp.userapi.com/c840337/v840337182/23ff0/wSLWJZXu6J0.jpg</item>
+        <item>https://pp.userapi.com/c840130/v840130736/3a3cf/ncF0xsEFxvQ.jpg</item>
+    </array>
+
+    <array name="name_images">
+        <item>Обида</item>
+        <item>Дома</item>
+        <item>Печаль</item>
+        <item>Наблюдение</item>
+        <item>Веселье</item>
+        <item>Встреча</item>
+    </array>
+</resources>

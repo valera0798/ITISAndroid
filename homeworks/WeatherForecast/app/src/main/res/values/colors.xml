@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorText_default">#000000</color>
+    <color name="colorText_default_white">#ffffff</color>
+    <color name="colorText_morning_light">#FDCCA1</color>
+    <color name="colorText_morning_dark">#CEC42F</color>
+    <color name="colorText_afternoon_light">#FAF8F8</color>
+    <color name="colorText_afternoon_dark">#D0FF4F</color>
+    <color name="colorText_evening_light">#D87B51</color>
+    <color name="colorText_evening_dark">#A67D19</color>
+    <color name="colorText_night_light">#41abb7</color>
+    <color name="colorText_night_dark">#71845c</color>
+</resources>

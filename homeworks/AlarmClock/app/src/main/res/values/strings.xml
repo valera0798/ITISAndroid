@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Будильник</string>
+
+    <string name="btn_create_alarm">Создать</string>
+    <string name="title_create_alarm">Создание будильника</string>
+
+    <array name="week_days">
+        <item>@string/week_day_monday</item>
+        <item>@string/week_day_tuesday</item>
+        <item>@string/week_day_wednesday</item>
+        <item>@string/week_day_thursday</item>
+        <item>@string/week_day_friday</item>
+        <item>@string/week_day_saturday</item>
+        <item>@string/week_day_sunday</item>
+    </array>
+    <string name="week_day_monday">Пн</string>
+    <string name="week_day_tuesday">Вт</string>
+    <string name="week_day_wednesday">Ср</string>
+    <string name="week_day_thursday">Чт</string>
+    <string name="week_day_friday">Пт</string>
+    <string name="week_day_saturday">Сб</string>
+    <string name="week_day_sunday">Вс</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="notification_alarm_ticker">Пора вставать!</string>
+    <string name="notification_content_title">Будильник</string>
+    <string name="notification_content_text">Время:</string>
+    <string name="notification_positive_action_text">Выключить</string>
+    <string name="notification_negative_action_text">Спать</string>
+    <string name="action_delete_all_entries">Удалить все</string>
+
+    <string name="message_info_delete_all_entries">Все будильники удалены</string>
+    <string name="message_info_add_new_alarm">Будильник сработает через:</string>
+
+    <string name="message_info_add_new_alarm_seconds_accusative">секунду</string>
+    <string name="message_info_add_new_alarm_seconds_genitive">секунды</string>
+    <string name="message_info_add_new_alarm_seconds_genitive_plural">секунд</string>
+
+    <string name="message_info_add_new_alarm_minutes_accusative">минуту</string>
+    <string name="message_info_add_new_alarm_minutes_genitive">минуты</string>
+    <string name="message_info_add_new_alarm_minutes_genitive_plural">минут</string>
+
+    <string name="message_info_add_new_alarm_hours_accusative">час</string>
+    <string name="message_info_add_new_alarm_hours_genitive">часа</string>
+    <string name="message_info_add_new_alarm_hours_genitive_plural">часов</string>
+
+    <string name="message_info_add_new_alarm_days_accusative">день</string>
+    <string name="message_info_add_new_alarm_days_genitive">дня</string>
+    <string name="message_info_add_new_alarm_days_genitive_plural">дней</string>
+    <string name="message_info_delete_alarm">Будильник выключен</string>
+
+</resources>

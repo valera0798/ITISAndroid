@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppTheme.Base">
+
+    </style>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColor">@color/colorText_default</item>
+    </style>
+
+    <style name="TextAppearanceMorning" parent="@android:style/TextAppearance">
+        <item name="android:textColorPrimary">@color/colorText_morning_light</item>
+        <item name="android:textColorSecondary">@color/colorText_morning_dark</item>
+    </style>
+
+    <style name="TextAppearanceAfternoon" parent="@android:style/TextAppearance">
+        <item name="android:textColorPrimary">@color/colorText_afternoon_light</item>
+        <item name="android:textColorSecondary">@color/colorText_afternoon_dark</item>
+    </style>
+
+    <style name="TextAppearanceEvening" parent="@android:style/TextAppearance">
+        <item name="android:textColorPrimary">@color/colorText_evening_light</item>
+        <item name="android:textColorSecondary">@color/colorText_evening_dark</item>
+    </style>
+
+    <style name="TextAppearanceNight" parent="@android:style/TextAppearance">
+        <item name="android:textColorPrimary">@color/colorText_night_light</item>
+        <item name="android:textColorSecondary">@color/colorText_night_dark</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>
